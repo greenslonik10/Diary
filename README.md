@@ -26,4 +26,4 @@ ___
 ___
 
 ## Модель базы данных
-![image](https://user-images.githubusercontent.com/103117871/196003441-d97d9e3a-dd2f-4efd-a125-724207dc9850.png)
+![image](https://user-images.githubusercontent.com/103117871/196003568-24378725-b14b-405c-921a-d1dae4cf328f.png)
