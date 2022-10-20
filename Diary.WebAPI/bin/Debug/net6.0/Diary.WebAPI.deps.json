@@ -8,10 +8,24 @@
     ".NETCoreApp,Version=v6.0": {
       "Diary.WebAPI/1.0.0": {
         "dependencies": {
+          "Diary": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
           "Diary.WebAPI.dll": {}
+        }
+      },
+      "Diary/1.0.0": {
+        "dependencies": {
+          "Microsoft.Owin": "2.0.0",
+          "Microsoft.Owin.Hosting": "2.0.0",
+          "Owin": "0.5.0"
+        },
+        "runtime": {
+          "lib/Diary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
@@ -20,6 +34,37 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.2.3.0",
             "fileVersion": "1.2.3.0"
+          }
+        }
+      },
+      "Microsoft.Owin/2.0.0": {
+        "dependencies": {
+          "Owin": "0.5.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20911.395"
+          }
+        }
+      },
+      "Microsoft.Owin.Hosting/2.0.0": {
+        "dependencies": {
+          "Microsoft.Owin": "2.0.0",
+          "Owin": "0.5.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Hosting.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20911.395"
+          }
+        }
+      },
+      "Owin/0.5.0": {
+        "runtime": {
+          "lib/net40/Owin.dll": {
+            "assemblyVersion": "0.5.0.0",
+            "fileVersion": "0.5.0.0"
           }
         }
       },
@@ -69,6 +114,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Diary/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EpE0A5MlBA/mbTMYCAFhkb5O0YeWs/yfnfwCe9YdAAQpdciU9/CYmoVY113ExVgQAzaJsH/q3uMC5jLM1zgC4g==",
+      "path": "diary/1.0.0",
+      "hashPath": "diary.1.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -82,6 +134,27 @@
       "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "Microsoft.Owin/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-os1K9NezNGFPMkjtkNGnTDkgnKYUQCQniHYoTHtqQFhf/uiHCpcT9457hyHXZSWEglAZFaXJZQr74bZkgdE7Bw==",
+      "path": "microsoft.owin/2.0.0",
+      "hashPath": "microsoft.owin.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Owin.Hosting/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ct4wxPUgt7DL7oA+g4bpTcCqlPyGCrMo+Y+larWoH7y1GYlncc00cvUR4XAOROW3IY64VTIFosM9fGSj/UUHSg==",
+      "path": "microsoft.owin.hosting/2.0.0",
+      "hashPath": "microsoft.owin.hosting.2.0.0.nupkg.sha512"
+    },
+    "Owin/0.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cK+NwlcDJ+uK9w15ZGKo0T38dAR536Iz5zqXtsoxyga+ombvmDUr2jIiR+o2yGMjBOwof/iUXSA7tRnKC43Yhg==",
+      "path": "owin/0.5.0",
+      "hashPath": "owin.0.5.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",
