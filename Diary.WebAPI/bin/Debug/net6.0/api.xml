@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Diary.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Diary.WebAPI.AppConfiguration.ApplicationExtensions.SerilogConfiguratios.UseSerilogConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use serilog configuration
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:Diary.WebAPI.AppConfiguration.ApplicationExtensions.SwaggerConfiguration">
+            <summary>
+            Application builder extensions
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ApplicationExtensions.SwaggerConfiguration.UseSwaggerConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use swagger configuration
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.SerilogConfigurations.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+            Add serilog configuration
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.SwaggerConfiguration.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add swagger settings
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Diary.WebAPI.AppConfiguration.ServicesExtensions.VersioningConfigurations">
+            <summary>
+            Services extensions
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.VersioningConfigurations.AddVersioningConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure versioning
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>
