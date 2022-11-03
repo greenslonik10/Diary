@@ -1,0 +1,15 @@
+D:\Projects\Diary\Diary.Repository\bin\Debug\net6.0\Diary.Repository.deps.json
+D:\Projects\Diary\Diary.Repository\bin\Debug\net6.0\Diary.Repository.dll
+D:\Projects\Diary\Diary.Repository\bin\Debug\net6.0\Diary.Repository.pdb
+D:\Projects\Diary\Diary.Repository\bin\Debug\net6.0\Diary.Entity.dll
+D:\Projects\Diary\Diary.Repository\bin\Debug\net6.0\Diary.Entity.pdb
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.csproj.AssemblyReference.cache
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.AssemblyInfoInputs.cache
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.AssemblyInfo.cs
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.csproj.CoreCompileInputs.cache
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.csproj.CopyComplete
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.dll
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\refint\Diary.Repository.dll
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.pdb
+D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\ref\Diary.Repository.dll

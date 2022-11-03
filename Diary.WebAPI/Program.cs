@@ -1,24 +1,31 @@
-using Diary.WebAPI.AppConfiguration.ServicesExtensions;
+using Diary.Repository;
 using Diary.WebAPI.AppConfiguration.ApplicationExtensions;
+using Diary.WebAPI.AppConfiguration.ServicesExtensions;
+using Diary.Entity;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
+var configuration = new ConfigurationBuilder()
+.AddJsonFile("appsettings.json", optional: false)
+.Build();
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.AddSerilogConfiguration();
+builder.Services.AddDbContextConfiguration(configuration);
 builder.Services.AddVersioningConfiguration();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerConfiguration();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-//builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
+
+//temporary
+builder.Services.AddScoped<DbContext, Context>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 var app = builder.Build();
 
 app.UseSerilogConfiguration();
 
-//Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwaggerConfiguration();
@@ -42,4 +49,4 @@ finally
 {
     Log.Information("Application stopped");
     Log.CloseAndFlush();
-}    
+}

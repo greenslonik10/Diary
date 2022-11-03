@@ -21,6 +21,12 @@
             </summary>
             <param name="app"></param>
         </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.DbContextConfiguration.AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add serilog configuration
+            </summary>
+            <param name="builder"></param>
+        </member>
         <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.SerilogConfigurations.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
             <summary>
             Add serilog configuration
