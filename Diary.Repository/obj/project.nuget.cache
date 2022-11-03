@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xV62YQuh54jsHvld2eRwIJai0O8wWfUQfxKa/TXBITfyD3CiXEXJCdjYrW0c16PTDyZIHvOQ6RNAlPEV4epiPQ==",
+  "dgSpecHash": "nImvQxMnlyHPwRyqgFBPB8xCzBwucmUxuUMLKwCY6/2Zo9DKY2nHNuj5bmzHhd49rhuNDYeiEW4W+sjpSSjLwA==",
   "success": true,
-  "projectFilePath": "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
+  "projectFilePath": "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zazul\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\zazul\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

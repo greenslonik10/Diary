@@ -50,5 +50,44 @@
             </summary>
             <param name="services"></param>
         </member>
+        <member name="T:Diary.WebAPI.Controllers.UsersController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.UsersController.#ctor(Diary.Repository.IRepository{Diary.Entity.Models.Student})">
+            <summary>
+            Users controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.UsersController.GetUsers">
+            <summary>
+            Get users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.UsersController.GetUsers(System.Guid)">
+            <summary>
+            Get users
+            </summary>
+            <param name="student"></param>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.UsersController.DeleteUsers(Diary.Entity.Models.Student)">
+            <summary>
+            Delete users
+            </summary>
+            <param name="student"></param>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.UsersController.PostUsers(Diary.Entity.Models.Student)">
+            <summary>
+            Post users
+            </summary>
+            <param name="student"></param>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.UsersController.Updatesers(Diary.Entity.Models.Student)">
+            <summary>
+            Update users
+            </summary>
+            <param name="student"></param>
+        </member>
     </members>
 </doc>

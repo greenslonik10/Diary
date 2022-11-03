@@ -16,12 +16,12 @@ namespace Diary.WebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private IRepository<s> _repository;
+        private IRepository<Student> _repository;
 
         /// <summary>
         /// Users controller
         /// </summary>
-        public UsersController(IRepository<User> repository)
+        public UsersController(IRepository<Student> repository)
         {
             _repository = repository;
         }
@@ -39,7 +39,7 @@ namespace Diary.WebAPI.Controllers
         /// <summary>
         /// Get users
         /// </summary>
-        /// <param name="users"></param>
+        /// <param name="student"></param>
         [HttpGet]
         public IActionResult GetUsers(Guid id)
         {
@@ -49,32 +49,32 @@ namespace Diary.WebAPI.Controllers
         /// <summary>
         /// Delete users
         /// </summary>
-        /// <param name="users"></param>
+        /// <param name="student"></param>
         [HttpDelete]
-        public IActionResult DeleteUsers( user)
+        public IActionResult DeleteUsers(Student student)
         {
-            _repository.Delete(user);
+            _repository.Delete(student);
             return Ok();
         }
         /// <summary>
         /// Post users
         /// </summary>
-        /// <param name="users"></param>
+        /// <param name="student"></param>
         [HttpPost]
-        public IActionResult PostUsers( user)
+        public IActionResult PostUsers(Student student)
         {
-            var result = _repository.Save(user);
+            var result = _repository.Save(student);
             return Ok(result);
         }
 
         /// <summary>
         /// Update users
         /// </summary>
-        /// <param name="users"></param>
+        /// <param name="student"></param>
         [HttpPut]
-        public IActionResult Updatesers(User user)
+        public IActionResult Updatesers(Student student)
         {
-            return PostUsers(user);
+            return PostUsers(student);
         }
 
     }
