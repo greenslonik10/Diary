@@ -43,8 +43,8 @@ namespace Diary.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetUsers(Guid id)
         {
-            var users = _repository.GetById(id);
-            return Ok(users);
+            var student = _repository.GetById(id);
+            return Ok(student);
         }
         /// <summary>
         /// Delete users

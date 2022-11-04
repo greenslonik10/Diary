@@ -72,15 +72,15 @@ public class Context : DbContext
         builder.Entity<Schedule>().HasOne(x => x.Class)
                                     .WithMany(x => x.Schedule)
                                 .HasForeignKey(x => x.ClassID)
-                            .OnDelete(DeleteBehavior.Cascade);
+                            .OnDelete(DeleteBehavior.NoAction);
         builder.Entity<Schedule>().HasOne(x => x.Teacher)
                                     .WithMany(x => x.Schedule)
                                 .HasForeignKey(x => x.TeacherID)
-                            .OnDelete(DeleteBehavior.Cascade);
+                            .OnDelete(DeleteBehavior.NoAction);
         builder.Entity<Schedule>().HasOne(x => x.Subject)
                                     .WithMany(x => x.Schedule)
                                 .HasForeignKey(x => x.SubjectID)
-                            .OnDelete(DeleteBehavior.Cascade);
+                            .OnDelete(DeleteBehavior.NoAction);
         #endregion
 
         #region Student
@@ -89,11 +89,11 @@ public class Context : DbContext
         builder.Entity<Student>().HasOne(x => x.Class)
                                     .WithMany(x => x.Student)
                                 .HasForeignKey(x => x.ClassID)
-                            .OnDelete(DeleteBehavior.Cascade);
+                            .OnDelete(DeleteBehavior.NoAction);
         builder.Entity<Student>().HasOne(x => x.School)
                                     .WithMany(x => x.Student)
                                 .HasForeignKey(x => x.SchoolID)
-                            .OnDelete(DeleteBehavior.Cascade);
+                            .OnDelete(DeleteBehavior.NoAction);
         #endregion
 
         #region Subject
@@ -116,11 +116,11 @@ public class Context : DbContext
         builder.Entity<TeacherInClass>().HasOne(x => x.Class)
                                     .WithMany(x => x.TeacherInClass)
                                 .HasForeignKey(x => x.ClassID)
-                            .OnDelete(DeleteBehavior.Cascade);
+                            .OnDelete(DeleteBehavior.NoAction);
         builder.Entity<TeacherInClass>().HasOne(x => x.Teacher)
                                     .WithMany(x => x.TeacherInClass)
                                 .HasForeignKey(x => x.TeacherID)
-                            .OnDelete(DeleteBehavior.Cascade);
+                            .OnDelete(DeleteBehavior.NoAction);
         #endregion
 
 

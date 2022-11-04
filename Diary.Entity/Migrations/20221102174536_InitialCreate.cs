@@ -121,13 +121,13 @@ namespace Diary.Entity.Migrations
                         column: x => x.ClassID,
                         principalTable: "class",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_student_school_SchoolID",
                         column: x => x.SchoolID,
                         principalTable: "school",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -152,19 +152,19 @@ namespace Diary.Entity.Migrations
                         column: x => x.ClassID,
                         principalTable: "class",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_schedule_subject_SubjectID",
                         column: x => x.SubjectID,
                         principalTable: "subject",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_schedule_teacher_TeacherID",
                         column: x => x.TeacherID,
                         principalTable: "teacher",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -185,13 +185,13 @@ namespace Diary.Entity.Migrations
                         column: x => x.ClassID,
                         principalTable: "class",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_teacherInClass_teacher_TeacherID",
                         column: x => x.TeacherID,
                         principalTable: "teacher",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
