@@ -33,8 +33,19 @@ namespace Diary.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetUsers()
         {
-            var users = _repository.GetAll();
-            return Ok(users);
+            var myStudent = new Student()
+            {
+                PasswordHash = "123",
+                Login = "zn",
+                Name = "Nikita",
+                Surname = "Zazulin",
+                Patronymic = "Igorevich"
+            };
+            _repository.Save(myStudent);
+            myStudent.Login = "znn";
+            _repository.Save(myStudent);
+            var students = _repository.GetAll();
+            return Ok(students);
         }
         /// <summary>
         /// Get users
