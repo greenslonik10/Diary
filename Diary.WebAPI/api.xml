@@ -27,6 +27,12 @@
             </summary>
             <param name="builder"></param>
         </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.ServicesExtensions.AddMapperConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add serilog configuration
+            </summary>
+            <param name="builder"></param>
+        </member>
         <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.SerilogConfigurations.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
             <summary>
             Add serilog configuration
@@ -50,44 +56,305 @@
             </summary>
             <param name="services"></param>
         </member>
-        <member name="T:Diary.WebAPI.Controllers.UsersController">
+        <member name="T:Diary.WebAPI.Controllers.AdminController">
             <summary>
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.UsersController.#ctor(Diary.Repository.IRepository{Diary.Entity.Models.Student})">
+        <member name="M:Diary.WebAPI.Controllers.AdminController.#ctor(Diary.Services.Abstract.IAdminService,AutoMapper.IMapper)">
             <summary>
-            Users controller
+            admin controller
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.UsersController.GetUsers">
+        <member name="M:Diary.WebAPI.Controllers.AdminController.GetAdmins(System.Int32,System.Int32)">
             <summary>
-            Get users
+            Get admin by pages
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.UsersController.GetUsers(System.Guid)">
+        <member name="M:Diary.WebAPI.Controllers.AdminController.DeleteAdmin(System.Guid)">
             <summary>
-            Get users
+            Delete admin
             </summary>
-            <param name="student"></param>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.UsersController.DeleteUsers(Diary.Entity.Models.Student)">
+        <member name="M:Diary.WebAPI.Controllers.AdminController.GetAdmin(System.Guid)">
             <summary>
-            Delete users
+            Get admin
             </summary>
-            <param name="student"></param>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.UsersController.PostUsers(Diary.Entity.Models.Student)">
+        <member name="M:Diary.WebAPI.Controllers.AdminController.UpdateAdmin(System.Guid,Diary.WebAPI.Models.UpdateAdminRequest)">
             <summary>
-            Post users
+            Update admin
             </summary>
-            <param name="student"></param>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.UsersController.Updatesers(Diary.Entity.Models.Student)">
+        <member name="T:Diary.WebAPI.Controllers.ClassController">
             <summary>
-            Update users
             </summary>
-            <param name="student"></param>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ClassController.#ctor(Diary.Services.Abstract.IClassService,AutoMapper.IMapper)">
+            <summary>
+            class controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ClassController.GetClasses(System.Int32,System.Int32)">
+            <summary>
+            Get class by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ClassController.DeleteClass(System.Guid)">
+            <summary>
+            Delete class
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ClassController.GetClass(System.Guid)">
+            <summary>
+            Get class
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ClassController.UpdateClass(System.Guid,Diary.WebAPI.Models.UpdateClassRequest)">
+            <summary>
+            Update class
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.MarkController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.MarkController.#ctor(Diary.Services.Abstract.IMarkService,AutoMapper.IMapper)">
+            <summary>
+            mark controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.MarkController.GetMarks(System.Int32,System.Int32)">
+            <summary>
+            Get mark by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.MarkController.DeleteMark(System.Guid)">
+            <summary>
+            Delete mark
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.MarkController.GetMark(System.Guid)">
+            <summary>
+            Get mark
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.MarkController.UpdateMark(System.Guid,Diary.WebAPI.Models.UpdateMarkRequest)">
+            <summary>
+            Update mark
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.PresenceController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.PresenceController.#ctor(Diary.Services.Abstract.IPresenceService,AutoMapper.IMapper)">
+            <summary>
+            presence controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.PresenceController.GetPresences(System.Int32,System.Int32)">
+            <summary>
+            Get presence by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.PresenceController.DeletePresence(System.Guid)">
+            <summary>
+            Delete presence
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.PresenceController.GetPresence(System.Guid)">
+            <summary>
+            Get presence
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.PresenceController.UpdatePresence(System.Guid,Diary.WebAPI.Models.UpdatePresenceRequest)">
+            <summary>
+            Update presence
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.ScheduleController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ScheduleController.#ctor(Diary.Services.Abstract.IScheduleService,AutoMapper.IMapper)">
+            <summary>
+            schedule controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ScheduleController.GetSchedules(System.Int32,System.Int32)">
+            <summary>
+            Get schedule by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ScheduleController.DeleteSchedule(System.Guid)">
+            <summary>
+            Delete schedule
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ScheduleController.GetSchedule(System.Guid)">
+            <summary>
+            Get schedule
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ScheduleController.UpdateSchool(System.Guid,Diary.WebAPI.Models.UpdateScheduleRequest)">
+            <summary>
+            Update schedule
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.SchoolController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SchoolController.#ctor(Diary.Services.Abstract.ISchoolService,AutoMapper.IMapper)">
+            <summary>
+            school controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SchoolController.GetSchools(System.Int32,System.Int32)">
+            <summary>
+            Get school by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SchoolController.DeleteSchool(System.Guid)">
+            <summary>
+            Delete school
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SchoolController.GetSchool(System.Guid)">
+            <summary>
+            Get school
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SchoolController.UpdateSchool(System.Guid,Diary.WebAPI.Models.UpdateSchoolRequest)">
+            <summary>
+            Update school
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.StudentController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.StudentController.#ctor(Diary.Services.Abstract.IStudentService,AutoMapper.IMapper)">
+            <summary>
+            student controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.StudentController.GetStudents(System.Int32,System.Int32)">
+            <summary>
+            Get student by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.StudentController.DeleteStudent(System.Guid)">
+            <summary>
+            Delete student
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.StudentController.GetStudent(System.Guid)">
+            <summary>
+            Get student
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.StudentController.UpdateStudent(System.Guid,Diary.WebAPI.Models.UpdateStudentRequest)">
+            <summary>
+            Update student
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.SubjectController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SubjectController.#ctor(Diary.Services.Abstract.ISubjectService,AutoMapper.IMapper)">
+            <summary>
+            subject controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SubjectController.GetSubjects(System.Int32,System.Int32)">
+            <summary>
+            Get subject by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SubjectController.DeleteSubject(System.Guid)">
+            <summary>
+            Delete subject
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SubjectController.GetSubject(System.Guid)">
+            <summary>
+            Get subject
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SubjectController.UpdateSubject(System.Guid,Diary.WebAPI.Models.UpdateSubjectRequest)">
+            <summary>
+            Update subject
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.TeacherController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherController.#ctor(Diary.Services.Abstract.ITeacherService,AutoMapper.IMapper)">
+            <summary>
+            teacher controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherController.GetTeachers(System.Int32,System.Int32)">
+            <summary>
+            Get teacher by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherController.DeleteTeacher(System.Guid)">
+            <summary>
+            Delete teacher
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherController.GetTeacher(System.Guid)">
+            <summary>
+            Get teacher
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherController.UpdateTeacher(System.Guid,Diary.WebAPI.Models.UpdateTeacherRequest)">
+            <summary>
+            Update teacher
+            </summary>
+        </member>
+        <member name="T:Diary.WebAPI.Controllers.TeacherInClassController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherInClassController.#ctor(Diary.Services.Abstract.ITeacherInClassService,AutoMapper.IMapper)">
+            <summary>
+            teacher in class controller
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherInClassController.GetTeachersInClasses(System.Int32,System.Int32)">
+            <summary>
+            Get teacher in class by pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherInClassController.DeleteTeacherInClass(System.Guid)">
+            <summary>
+            Delete teacher in class
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherInClassController.GetTeacherInClass(System.Guid)">
+            <summary>
+            Get teacher in class
+            </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherInClassController.UpdateTeacherInClass(System.Guid,Diary.WebAPI.Models.TeacherInClassResponse)">
+            <summary>
+            Update teacher in class
+            </summary>
         </member>
     </members>
 </doc>

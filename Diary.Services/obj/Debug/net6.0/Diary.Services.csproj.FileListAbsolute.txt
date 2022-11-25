@@ -1,0 +1,17 @@
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Services.deps.json
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Services.dll
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Services.pdb
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Entity.dll
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Repository.dll
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Entity.pdb
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Repository.pdb
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.csproj.AssemblyReference.cache
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.AssemblyInfoInputs.cache
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.AssemblyInfo.cs
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.csproj.CoreCompileInputs.cache
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.csproj.CopyComplete
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.dll
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\refint\Diary.Services.dll
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.pdb
+D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\ref\Diary.Services.dll

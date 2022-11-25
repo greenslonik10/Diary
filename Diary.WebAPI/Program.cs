@@ -1,4 +1,5 @@
 using Diary.Repository;
+using Diary.Services;
 using Diary.WebAPI.AppConfiguration.ApplicationExtensions;
 using Diary.WebAPI.AppConfiguration.ServicesExtensions;
 using Diary.Entity;
@@ -14,8 +15,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddSerilogConfiguration();
 builder.Services.AddDbContextConfiguration(configuration);
 builder.Services.AddVersioningConfiguration();
+builder.Services.AddMapperConfiguration();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerConfiguration();
+builder.Services.AddRepositoryConfiguration();
+builder.Services.AddBusinessLogicConfiguration();
 
 //temporary
 builder.Services.AddScoped<DbContext, Context>();
