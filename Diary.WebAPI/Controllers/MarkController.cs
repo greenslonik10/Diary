@@ -96,6 +96,29 @@ namespace Diary.WebAPI.Controllers
             return BadRequest(ex.ToString());
            }
         }
+
+        /// <summary>
+        /// create mark
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult CreateMark([FromBody] CreateMarkRequest mark)
+        {
+            var validationResult = mark.Validate();
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+            try
+            {
+                var resultModel =markService.CreateMark(mapper.Map<CreateMarkModel>(mark));
+                return Ok(resultModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
           
     }
 

@@ -11,4 +11,6 @@ public interface ISubjectService
     void DeleteSubject(Guid id);
 
     PageModel<SubjectPreviewModel> GetSubjects(int limit = 20, int offset = 0);
+
+    SubjectModel CreateSubject (SubjectModel subjectModel);
 }

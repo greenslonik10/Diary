@@ -59,4 +59,10 @@ public class SubjectService : ISubjectService
         existingSubject = subjectRepository.Save(existingSubject);
         return mapper.Map<SubjectModel>(existingSubject);
     }
+
+    SubjectModel ISubjectService.CreateSubject(Diary.Services.Models.SubjectModel subjectModel)
+    {
+      subjectRepository.Save(mapper.Map<Entity.Models.Subject>(subjectModel));
+        return subjectModel;
+    }
 }

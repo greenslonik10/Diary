@@ -96,6 +96,29 @@ namespace Diary.WebAPI.Controllers
             return BadRequest(ex.ToString());
            }
         }
+
+        /// <summary>
+        /// create teacher
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult CreateTeacher([FromBody] CreateTeacherRequest teacher)
+        {
+            var validationResult = teacher.Validate();
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+            try
+            {
+                var resultModel =teacherService.CreateTeacher(mapper.Map<CreateTeacherModel>(teacher));
+                return Ok(resultModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
           
     }
 

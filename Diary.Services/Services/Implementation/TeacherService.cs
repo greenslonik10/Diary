@@ -62,4 +62,10 @@ public class TeacherService : ITeacherService
         existingTeacher = teacherRepository.Save(existingTeacher);
         return mapper.Map<TeacherModel>(existingTeacher);
     }
+
+    TeacherModel ITeacherService.CreateTeacher(Diary.Services.Models.CreateTeacherModel teacherModel)
+    {
+      var teacher= mapper.Map<Entity.Models.Teacher>(teacherModel);
+       return mapper.Map<TeacherModel>(teacherRepository.Save(teacher));
+    }
 }

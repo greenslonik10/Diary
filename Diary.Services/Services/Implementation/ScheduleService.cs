@@ -61,4 +61,11 @@ public class ScheduleService : IScheduleService
         existingSchedule = scheduleRepository.Save(existingSchedule);
         return mapper.Map<ScheduleModel>(existingSchedule);
     }
+
+       ScheduleModel IScheduleService.CreateSchedule(Diary.Services.Models.CreateScheduleModel createScheduleModel)
+    {
+      var schedule= mapper.Map<Entity.Models.Schedule>(createScheduleModel);
+       return mapper.Map<ScheduleModel>(scheduleRepository.Save(schedule));
+    }
+
 }

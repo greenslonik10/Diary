@@ -96,6 +96,29 @@ namespace Diary.WebAPI.Controllers
             return BadRequest(ex.ToString());
            }
         }
+
+        /// <summary>
+        /// create presence
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult CreatePresence([FromBody] CreatePresenceRequest presence)
+        {
+            var validationResult = presence.Validate();
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+            try
+            {
+                var resultModel =presenceService.CreatePresence(mapper.Map<CreatePresenceModel>(presence));
+                return Ok(resultModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
           
     }
 

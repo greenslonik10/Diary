@@ -96,6 +96,17 @@ namespace Diary.WebAPI.Controllers
             return BadRequest(ex.ToString());
            }
         }
+
+        /// <summary>
+        /// create school
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult CreateSchool([FromBody] SchoolModel school)
+        {
+            var response =schoolService.CreateSchool(school);
+            return Ok(response);
+        }
           
     }
 

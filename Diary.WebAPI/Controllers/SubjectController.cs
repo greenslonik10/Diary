@@ -96,6 +96,17 @@ namespace Diary.WebAPI.Controllers
             return BadRequest(ex.ToString());
            }
         }
+
+        /// <summary>
+        /// create subject
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult CreateSubject([FromBody] SubjectModel subject)
+        {
+            var response =subjectService.CreateSubject(subject);
+            return Ok(response);
+        }
           
     }
 

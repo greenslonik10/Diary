@@ -11,4 +11,6 @@ public interface ITeacherService
     void DeleteTeacher(Guid id);
 
     PageModel<TeacherPreviewModel> GetTeachers(int limit = 20, int offset = 0);
+
+    TeacherModel CreateTeacher (CreateTeacherModel teacherModel);
 }

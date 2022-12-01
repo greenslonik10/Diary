@@ -96,7 +96,31 @@ namespace Diary.WebAPI.Controllers
             return BadRequest(ex.ToString());
            }
         }
-          
+
+        /// <summary>
+        /// create class
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult CreateClass([FromBody] CreateClassRequest clas)
+        {
+            var validationResult = clas.Validate();
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+            try
+            {
+                var resultModel =classService.CreateClass(mapper.Map<CreateClassModel>(clas));
+                return Ok(resultModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+
     }
 
 }

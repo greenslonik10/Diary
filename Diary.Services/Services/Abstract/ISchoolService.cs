@@ -11,4 +11,6 @@ public interface ISchoolService
     void DeleteSchool(Guid id);
 
     PageModel<SchoolPreviewModel> GetSchools(int limit = 20, int offset = 0);
+
+    SchoolModel CreateSchool(SchoolModel schoolModel);
 }

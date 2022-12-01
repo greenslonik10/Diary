@@ -59,4 +59,11 @@ public class PresenceService : IPresenceService
         existingPresence = presenceRepository.Save(existingPresence);
         return mapper.Map<PresenceModel>(existingPresence);
     }
+
+    PresenceModel IPresenceService.CreatePresence(Diary.Services.Models.CreatePresenceModel presenceModel)
+    {
+      var presence= mapper.Map<Entity.Models.Presence>(presenceModel);
+       return mapper.Map<PresenceModel>(presenceRepository.Save(presence));
+    }
+
 }

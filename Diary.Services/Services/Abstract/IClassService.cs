@@ -11,4 +11,6 @@ public interface IClassService
     void DeleteClass(Guid id);
 
     PageModel<ClassPreviewModel> GetClasses(int limit = 20, int offset = 0);
+
+    ClassModel CreateClass(CreateClassModel createClassModel);
 }

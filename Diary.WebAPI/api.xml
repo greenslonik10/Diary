@@ -86,6 +86,12 @@
             Update admin
             </summary>
         </member>
+        <member name="M:Diary.WebAPI.Controllers.AdminController.CreateAdmin(Diary.Services.Models.AdminModel)">
+            <summary>
+            create admin
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Diary.WebAPI.Controllers.ClassController">
             <summary>
             </summary>
@@ -115,6 +121,12 @@
             <summary>
             Update class
             </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.ClassController.CreateClass(Diary.WebAPI.Models.CreateClassRequest)">
+            <summary>
+            create class
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Diary.WebAPI.Controllers.MarkController">
             <summary>
@@ -146,6 +158,12 @@
             Update mark
             </summary>
         </member>
+        <member name="M:Diary.WebAPI.Controllers.MarkController.CreateMark(Diary.WebAPI.Models.CreateMarkRequest)">
+            <summary>
+            create mark
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Diary.WebAPI.Controllers.PresenceController">
             <summary>
             </summary>
@@ -175,6 +193,12 @@
             <summary>
             Update presence
             </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.PresenceController.CreatePresence(Diary.WebAPI.Models.CreatePresenceRequest)">
+            <summary>
+            create presence
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Diary.WebAPI.Controllers.ScheduleController">
             <summary>
@@ -206,6 +230,12 @@
             Update schedule
             </summary>
         </member>
+        <member name="M:Diary.WebAPI.Controllers.ScheduleController.CreateSchedule(Diary.WebAPI.Models.CreateScheduleRequest)">
+            <summary>
+            create program
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Diary.WebAPI.Controllers.SchoolController">
             <summary>
             </summary>
@@ -235,6 +265,12 @@
             <summary>
             Update school
             </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.SchoolController.CreateSchool(Diary.Services.Models.SchoolModel)">
+            <summary>
+            create school
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Diary.WebAPI.Controllers.StudentController">
             <summary>
@@ -296,6 +332,12 @@
             Update subject
             </summary>
         </member>
+        <member name="M:Diary.WebAPI.Controllers.SubjectController.CreateSubject(Diary.Services.Models.SubjectModel)">
+            <summary>
+            create subject
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Diary.WebAPI.Controllers.TeacherController">
             <summary>
             </summary>
@@ -325,6 +367,12 @@
             <summary>
             Update teacher
             </summary>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.TeacherController.CreateTeacher(Diary.WebAPI.Models.CreateTeacherRequest)">
+            <summary>
+            create teacher
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Diary.WebAPI.Controllers.TeacherInClassController">
             <summary>

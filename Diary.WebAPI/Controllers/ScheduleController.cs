@@ -96,7 +96,29 @@ namespace Diary.WebAPI.Controllers
             return BadRequest(ex.ToString());
            }
         }
-          
+
+         /// <summary>
+        /// create program
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult CreateSchedule([FromBody] CreateScheduleRequest schedule)
+        {
+            var validationResult = schedule.Validate();
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+            try
+            {
+                var resultModel =scheduleService.CreateSchedule(mapper.Map<CreateScheduleModel>(schedule));
+                return Ok(resultModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        } 
     }
 
 }

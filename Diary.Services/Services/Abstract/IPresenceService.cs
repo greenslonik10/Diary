@@ -11,4 +11,6 @@ public interface IPresenceService
     void DeletePresence(Guid id);
 
     PageModel<PresencePreviewModel> GetPresences(int limit = 20, int offset = 0);
+
+    PresenceModel CreatePresence (CreatePresenceModel presenceModel);
 }

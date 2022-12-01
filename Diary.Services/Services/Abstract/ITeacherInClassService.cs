@@ -11,4 +11,6 @@ public interface ITeacherInClassService
     void DeleteTeacherInClass(Guid id);
 
     PageModel<TeacherInClassModel> GetTeachersInClasses(int limit = 20, int offset = 0);
+
+    TeacherInClassModel CreateTeacherInClass (CreateTeacherInClassModel teacherModel);
 }

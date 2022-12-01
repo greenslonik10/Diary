@@ -59,4 +59,10 @@ public class ClassService : IClassService
         existingClass = classRepository.Save(existingClass);
         return mapper.Map<ClassModel>(existingClass);
     }
+
+    ClassModel IClassService.CreateClass(Diary.Services.Models.CreateClassModel createClassModel)
+    {
+      var clas= mapper.Map<Entity.Models.Class>(createClassModel);
+       return mapper.Map<ClassModel>(classRepository.Save(clas));
+    }
 }

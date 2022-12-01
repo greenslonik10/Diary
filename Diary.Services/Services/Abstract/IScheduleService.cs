@@ -11,4 +11,6 @@ public interface IScheduleService
     void DeleteSchedule(Guid id);
 
     PageModel<SchedulePreviewModel> GetSchedules(int limit = 20, int offset = 0);
+
+    ScheduleModel CreateSchedule (CreateScheduleModel createScheduleModel);
 }

@@ -59,4 +59,10 @@ public class SchoolService : ISchoolService
         existingSchool = schoolRepository.Save(existingSchool);
         return mapper.Map<SchoolModel>(existingSchool);
     }
+
+    SchoolModel ISchoolService.CreateSchool(Diary.Services.Models.SchoolModel schoolModel)
+    {
+      schoolRepository.Save(mapper.Map<Entity.Models.School>(schoolModel));
+        return schoolModel;
+    }
 }

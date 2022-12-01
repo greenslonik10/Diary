@@ -11,4 +11,5 @@ public interface IStudentService
     void DeleteStudent(Guid id);
 
     PageModel<StudentPreviewModel> GetStudents(int limit = 20, int offset = 0);
+    
 }

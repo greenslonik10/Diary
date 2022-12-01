@@ -59,4 +59,11 @@ public class MarkService : IMarkService
         existingMark = markRepository.Save(existingMark);
         return mapper.Map<MarkModel>(existingMark);
     }
+
+    MarkModel IMarkService.CreateMark(Diary.Services.Models.CreateMarkModel createMarkModel)
+    {
+      var mark= mapper.Map<Entity.Models.Mark>(createMarkModel);
+       return mapper.Map<MarkModel>(markRepository.Save(mark));
+    }
+
 }
