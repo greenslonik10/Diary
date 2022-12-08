@@ -9,6 +9,7 @@ namespace Diary.Services.Implementation;
 public class TeacherService : ITeacherService
 {
     private readonly IRepository<Teacher> teacherRepository;
+    private readonly IRepository<School> schoolRepository;
     private readonly IMapper mapper;
     public TeacherService(IRepository<Teacher> teacherRepository, IMapper mapper)
     {
@@ -62,10 +63,26 @@ public class TeacherService : ITeacherService
         existingTeacher = teacherRepository.Save(existingTeacher);
         return mapper.Map<TeacherModel>(existingTeacher);
     }
-
-    TeacherModel ITeacherService.CreateTeacher(Diary.Services.Models.CreateTeacherModel teacherModel)
+    TeacherModel ITeacherService.CreateTeacher(Diary.Services.Models.TeacherModel teacherModel, System.Guid SchoolID)
     {
-      var teacher= mapper.Map<Entity.Models.Teacher>(teacherModel);
-       return mapper.Map<TeacherModel>(teacherRepository.Save(teacher));
+      if(teacherRepository.GetAll(x=>x.Id==teacherModel.Id).FirstOrDefault()!=null)
+      {
+        throw new Exception ("Attempt to create a non-unique object!");
+      }
+      if(schoolRepository.GetAll(x=>x.Id==teacherModel.SchoolID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        TeacherModel createTeacher = new TeacherModel();
+        createTeacher.SchoolID=teacherModel.SchoolID;
+        createTeacher.Id=teacherModel.Id;
+        createTeacher.Name=teacherModel.Name;
+        createTeacher.Surname=teacherModel.Surname;
+        createTeacher.Patronymic=teacherModel.Patronymic;
+        createTeacher.Login = createTeacher.Login;
+        teacherRepository.Save(mapper.Map<Teacher>(createTeacher));
+        return createTeacher;
+
     }
+
 }

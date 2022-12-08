@@ -9,6 +9,9 @@ namespace Diary.Services.Implementation;
 public class ScheduleService : IScheduleService
 {
     private readonly IRepository<Schedule> scheduleRepository;
+    private readonly IRepository<Subject> subjectRepository;
+    private readonly IRepository<Class> classRepository;
+    private readonly IRepository<Teacher> teacherRepository;
     private readonly IMapper mapper;
     public ScheduleService(IRepository<Schedule> scheduleRepository, IMapper mapper)
     {
@@ -61,11 +64,35 @@ public class ScheduleService : IScheduleService
         existingSchedule = scheduleRepository.Save(existingSchedule);
         return mapper.Map<ScheduleModel>(existingSchedule);
     }
-
-       ScheduleModel IScheduleService.CreateSchedule(Diary.Services.Models.CreateScheduleModel createScheduleModel)
+    ScheduleModel IScheduleService.CreateSchedule(Diary.Services.Models.ScheduleModel scheduleModel, System.Guid SubjectID, System.Guid ClassID, System.Guid TeacherID)
     {
-      var schedule= mapper.Map<Entity.Models.Schedule>(createScheduleModel);
-       return mapper.Map<ScheduleModel>(scheduleRepository.Save(schedule));
+      if(scheduleRepository.GetAll(x=>x.Id==scheduleModel.Id).FirstOrDefault()!=null)
+      {
+        throw new Exception ("Attempt to create a non-unique object!");
+      }
+      if(subjectRepository.GetAll(x=>x.Id==scheduleModel.SubjectID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        if(classRepository.GetAll(x=>x.Id==scheduleModel.ClassID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        if(teacherRepository.GetAll(x=>x.Id==scheduleModel.TeacherID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        ScheduleModel createSchedule = new ScheduleModel();
+        createSchedule.ClassID=scheduleModel.ClassID;
+        createSchedule.Id=scheduleModel.Id;
+        createSchedule.SubjectID=scheduleModel.SubjectID;
+        createSchedule.TeacherID=scheduleModel.TeacherID;
+        createSchedule.DateTime=scheduleModel.DateTime;
+        createSchedule.DayOfWeek=scheduleModel.DayOfWeek;
+        createSchedule.HomeTask=scheduleModel.HomeTask;
+        scheduleRepository.Save(mapper.Map<Schedule>(createSchedule));
+        return createSchedule;
+
     }
 
 }

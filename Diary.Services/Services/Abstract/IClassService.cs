@@ -12,5 +12,5 @@ public interface IClassService
 
     PageModel<ClassPreviewModel> GetClasses(int limit = 20, int offset = 0);
 
-    ClassModel CreateClass(CreateClassModel createClassModel);
+    ClassModel CreateClass(ClassModel СlassModel, Guid SchoolID);
 }

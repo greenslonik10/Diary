@@ -9,6 +9,8 @@ namespace Diary.Services.Implementation;
 public class MarkService : IMarkService
 {
     private readonly IRepository<Mark> markRepository;
+    private readonly IRepository<Student> studentRepository;
+    private readonly IRepository<Schedule> scheduleRepository;
     private readonly IMapper mapper;
     public MarkService(IRepository<Mark> markRepository, IMapper mapper)
     {
@@ -60,10 +62,29 @@ public class MarkService : IMarkService
         return mapper.Map<MarkModel>(existingMark);
     }
 
-    MarkModel IMarkService.CreateMark(Diary.Services.Models.CreateMarkModel createMarkModel)
+    MarkModel IMarkService.CreateMark(Diary.Services.Models.MarkModel MarkModel, System.Guid StudentID, System.Guid ScheduleID)
     {
-      var mark= mapper.Map<Entity.Models.Mark>(createMarkModel);
-       return mapper.Map<MarkModel>(markRepository.Save(mark));
+      if(markRepository.GetAll(x=>x.Id==MarkModel.Id).FirstOrDefault()!=null)
+      {
+        throw new Exception ("Attempt to create a non-unique object!");
+      }
+      if(studentRepository.GetAll(x=>x.Id==MarkModel.StudentID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        if(scheduleRepository.GetAll(x=>x.Id==MarkModel.ScheduleID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        MarkModel createMark = new MarkModel();
+        createMark.StudentID=MarkModel.StudentID;
+        createMark.Id=MarkModel.Id;
+        createMark.Score=MarkModel.Score;
+        createMark.ScheduleID=MarkModel.ScheduleID;
+        markRepository.Save(mapper.Map<Mark>(createMark));
+        return createMark;
+
     }
+
 
 }

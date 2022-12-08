@@ -102,22 +102,10 @@ namespace Diary.WebAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult CreateTeacher([FromBody] CreateTeacherRequest teacher)
+        public IActionResult CreateTeacher([FromBody] TeacherModel teacher, [FromQuery] Guid SchoolId)
         {
-            var validationResult = teacher.Validate();
-            if (!validationResult.IsValid)
-            {
-                return BadRequest(validationResult.Errors);
-            }
-            try
-            {
-                var resultModel =teacherService.CreateTeacher(mapper.Map<CreateTeacherModel>(teacher));
-                return Ok(resultModel);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
+            var response = teacherService.CreateTeacher(teacher, SchoolId);
+            return Ok(response);
         }
           
     }

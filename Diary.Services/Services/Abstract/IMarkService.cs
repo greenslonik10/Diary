@@ -11,5 +11,5 @@ public interface IMarkService
     void DeleteMark(Guid id);
 
     PageModel<MarkPreviewModel> GetMarks(int limit = 20, int offset = 0);
-    MarkModel CreateMark(CreateMarkModel createMarkModel);
+    MarkModel CreateMark(MarkModel MarkModel, Guid StudentID, Guid ScheduleID);
 }

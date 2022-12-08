@@ -102,22 +102,10 @@ namespace Diary.WebAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult CreateClass([FromBody] CreateClassRequest clas)
+        public IActionResult CreateClass([FromBody] ClassModel clas, [FromQuery] Guid SchoolId)
         {
-            var validationResult = clas.Validate();
-            if (!validationResult.IsValid)
-            {
-                return BadRequest(validationResult.Errors);
-            }
-            try
-            {
-                var resultModel =classService.CreateClass(mapper.Map<CreateClassModel>(clas));
-                return Ok(resultModel);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
+            var response = classService.CreateClass(clas, SchoolId);
+            return Ok(response);
         }
 
 

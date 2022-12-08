@@ -12,5 +12,5 @@ public interface IPresenceService
 
     PageModel<PresencePreviewModel> GetPresences(int limit = 20, int offset = 0);
 
-    PresenceModel CreatePresence (CreatePresenceModel presenceModel);
+    PresenceModel CreatePresence (PresenceModel presenceModel, Guid StudentID, Guid ScheduleID);
 }

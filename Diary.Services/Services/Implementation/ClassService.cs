@@ -9,6 +9,7 @@ namespace Diary.Services.Implementation;
 public class ClassService : IClassService
 {
     private readonly IRepository<Class> classRepository;
+    private readonly IRepository<School> schoolRepository;
     private readonly IMapper mapper;
     public ClassService(IRepository<Class> classRepository, IMapper mapper)
     {
@@ -60,9 +61,22 @@ public class ClassService : IClassService
         return mapper.Map<ClassModel>(existingClass);
     }
 
-    ClassModel IClassService.CreateClass(Diary.Services.Models.CreateClassModel createClassModel)
+ClassModel IClassService.CreateClass(Diary.Services.Models.ClassModel classModel, System.Guid SchoolID)
     {
-      var clas= mapper.Map<Entity.Models.Class>(createClassModel);
-       return mapper.Map<ClassModel>(classRepository.Save(clas));
+      if(classRepository.GetAll(x=>x.Id==classModel.Id).FirstOrDefault()!=null)
+      {
+        throw new Exception ("Attempt to create a non-unique object!");
+      }
+      if(schoolRepository.GetAll(x=>x.Id==classModel.SchoolID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        ClassModel createClass = new ClassModel();
+        createClass.SchoolID=classModel.SchoolID;
+        createClass.Id=classModel.Id;
+        createClass.Name=classModel.Name;
+        classRepository.Save(mapper.Map<Class>(createClass));
+        return createClass;
+
     }
 }

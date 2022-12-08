@@ -9,6 +9,8 @@ namespace Diary.Services.Implementation;
 public class PresenceService : IPresenceService
 {
     private readonly IRepository<Presence> presenceRepository;
+    private readonly IRepository<Student> studentRepository;
+    private readonly IRepository<Schedule> scheduleRepository;
     private readonly IMapper mapper;
     public PresenceService(IRepository<Presence> presenceRepository, IMapper mapper)
     {
@@ -60,10 +62,29 @@ public class PresenceService : IPresenceService
         return mapper.Map<PresenceModel>(existingPresence);
     }
 
-    PresenceModel IPresenceService.CreatePresence(Diary.Services.Models.CreatePresenceModel presenceModel)
+    PresenceModel IPresenceService.CreatePresence(Diary.Services.Models.PresenceModel presenceModel, System.Guid StudentID, System.Guid ScheduleID)
     {
-      var presence= mapper.Map<Entity.Models.Presence>(presenceModel);
-       return mapper.Map<PresenceModel>(presenceRepository.Save(presence));
+      if(presenceRepository.GetAll(x=>x.Id==presenceModel.Id).FirstOrDefault()!=null)
+      {
+        throw new Exception ("Attempt to create a non-unique object!");
+      }
+      if(studentRepository.GetAll(x=>x.Id==presenceModel.StudentID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        if(scheduleRepository.GetAll(x=>x.Id==presenceModel.ScheduleID).FirstOrDefault() == null)
+        {
+            throw new Exception ("The object does not exist in the database!");
+        }
+        PresenceModel createPresence = new PresenceModel();
+        createPresence.StudentID=presenceModel.StudentID;
+        createPresence.Id=presenceModel.Id;
+        createPresence.Value=presenceModel.Value;
+        createPresence.ScheduleID=presenceModel.ScheduleID;
+        presenceRepository.Save(mapper.Map<Presence>(createPresence));
+        return createPresence;
+
     }
+
 
 }

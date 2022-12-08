@@ -122,7 +122,7 @@
             Update class
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.ClassController.CreateClass(Diary.WebAPI.Models.CreateClassRequest)">
+        <member name="M:Diary.WebAPI.Controllers.ClassController.CreateClass(Diary.Services.Models.ClassModel,System.Guid)">
             <summary>
             create class
             </summary>
@@ -158,7 +158,7 @@
             Update mark
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.MarkController.CreateMark(Diary.WebAPI.Models.CreateMarkRequest)">
+        <member name="M:Diary.WebAPI.Controllers.MarkController.CreateMark(Diary.Services.Models.MarkModel,System.Guid,System.Guid)">
             <summary>
             create mark
             </summary>
@@ -194,7 +194,7 @@
             Update presence
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.PresenceController.CreatePresence(Diary.WebAPI.Models.CreatePresenceRequest)">
+        <member name="M:Diary.WebAPI.Controllers.PresenceController.CreatePresence(Diary.Services.Models.PresenceModel,System.Guid,System.Guid)">
             <summary>
             create presence
             </summary>
@@ -230,9 +230,9 @@
             Update schedule
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.ScheduleController.CreateSchedule(Diary.WebAPI.Models.CreateScheduleRequest)">
+        <member name="M:Diary.WebAPI.Controllers.ScheduleController.CreateSchedule(Diary.Services.Models.ScheduleModel,System.Guid,System.Guid,System.Guid)">
             <summary>
-            create program
+            create schedule
             </summary>
             <returns></returns>
         </member>
@@ -368,7 +368,7 @@
             Update teacher
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.TeacherController.CreateTeacher(Diary.WebAPI.Models.CreateTeacherRequest)">
+        <member name="M:Diary.WebAPI.Controllers.TeacherController.CreateTeacher(Diary.Services.Models.TeacherModel,System.Guid)">
             <summary>
             create teacher
             </summary>

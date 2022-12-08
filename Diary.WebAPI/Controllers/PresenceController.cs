@@ -102,22 +102,10 @@ namespace Diary.WebAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult CreatePresence([FromBody] CreatePresenceRequest presence)
+        public IActionResult CreatePresence([FromBody] PresenceModel presence, [FromQuery] Guid StudentId, [FromQuery] Guid ScheduleId)
         {
-            var validationResult = presence.Validate();
-            if (!validationResult.IsValid)
-            {
-                return BadRequest(validationResult.Errors);
-            }
-            try
-            {
-                var resultModel =presenceService.CreatePresence(mapper.Map<CreatePresenceModel>(presence));
-                return Ok(resultModel);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
+            var response = presenceService.CreatePresence(presence, StudentId, ScheduleId);
+            return Ok(response);
         }
           
     }

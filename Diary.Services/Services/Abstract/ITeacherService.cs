@@ -12,5 +12,5 @@ public interface ITeacherService
 
     PageModel<TeacherPreviewModel> GetTeachers(int limit = 20, int offset = 0);
 
-    TeacherModel CreateTeacher (CreateTeacherModel teacherModel);
+    TeacherModel CreateTeacher (TeacherModel teacherModel, Guid SchoolID);
 }

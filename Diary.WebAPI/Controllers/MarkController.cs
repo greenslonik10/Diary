@@ -102,22 +102,10 @@ namespace Diary.WebAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult CreateMark([FromBody] CreateMarkRequest mark)
+        public IActionResult CreateMark([FromBody] MarkModel mark, [FromQuery] Guid StudentId, [FromQuery] Guid ScheduleId)
         {
-            var validationResult = mark.Validate();
-            if (!validationResult.IsValid)
-            {
-                return BadRequest(validationResult.Errors);
-            }
-            try
-            {
-                var resultModel =markService.CreateMark(mapper.Map<CreateMarkModel>(mark));
-                return Ok(resultModel);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
+            var response = markService.CreateMark(mark, StudentId, ScheduleId);
+            return Ok(response);
         }
           
     }

@@ -12,5 +12,5 @@ public interface IScheduleService
 
     PageModel<SchedulePreviewModel> GetSchedules(int limit = 20, int offset = 0);
 
-    ScheduleModel CreateSchedule (CreateScheduleModel createScheduleModel);
+    ScheduleModel CreateSchedule (ScheduleModel ScheduleModel, Guid SubjectID, Guid ClassID, Guid TeacherID);
 }

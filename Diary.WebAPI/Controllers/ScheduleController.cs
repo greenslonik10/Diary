@@ -97,28 +97,16 @@ namespace Diary.WebAPI.Controllers
            }
         }
 
-         /// <summary>
-        /// create program
+        /// <summary>
+        /// create schedule
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult CreateSchedule([FromBody] CreateScheduleRequest schedule)
+        public IActionResult CreateSchedule([FromBody] ScheduleModel schedule, [FromQuery] Guid SubjectId, [FromQuery] Guid ClassId, [FromQuery] Guid TeacherId)
         {
-            var validationResult = schedule.Validate();
-            if (!validationResult.IsValid)
-            {
-                return BadRequest(validationResult.Errors);
-            }
-            try
-            {
-                var resultModel =scheduleService.CreateSchedule(mapper.Map<CreateScheduleModel>(schedule));
-                return Ok(resultModel);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
-        } 
+            var response = scheduleService.CreateSchedule(schedule, SubjectId, ClassId, TeacherId);
+            return Ok(response);
+        }
     }
 
 }
