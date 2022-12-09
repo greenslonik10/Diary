@@ -2,6 +2,7 @@ using Diary.Services.Abstract;
 using Diary.Services.Implementation;
 using Diary.Services.MapperProfile;
 using Microsoft.Extensions.DependencyInjection;
+
 namespace Diary.Services;
 
 public static partial class ServicesExtensions
@@ -10,6 +11,7 @@ public static partial class ServicesExtensions
     {
         services.AddAutoMapper(typeof(ServicesProfile));
         //services
+        services.AddScoped<IStudentService, StudentService>();
         services.AddScoped<IAdminService, AdminService>();
         services.AddScoped<IStudentService, StudentService>();
         services.AddScoped<ISchoolService, SchoolService>();

@@ -13,3 +13,5 @@ D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.dll
 D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\refint\Diary.Repository.dll
 D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\Diary.Repository.pdb
 D:\Projects\Diary\Diary.Repository\obj\Debug\net6.0\ref\Diary.Repository.dll
+D:\Projects\Diary\Diary.Repository\bin\Debug\net6.0\Diary.Shared.dll
+D:\Projects\Diary\Diary.Repository\bin\Debug\net6.0\Diary.Shared.pdb

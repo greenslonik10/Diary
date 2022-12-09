@@ -1,18 +1,20 @@
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Diary.WebAPI.AppConfiguration.ServicesExtensions
 {
-    public static partial class SwaggerConfiguration
+    public static partial class ServicesExtensions
     {
-        private static string AppTitle = "Diary Web API";
+        private static string AppTitle = "TVprogram Web API";
 
         /// <summary>
         /// Add swagger settings
         /// </summary>
         /// <param name="services"></param>
-        public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
+        public static void AddSwaggerConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
+            string identityUri = configuration.GetValue<string>("IdentityServer:Uri");
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(options =>
             {
@@ -35,9 +37,37 @@ namespace Diary.WebAPI.AppConfiguration.ServicesExtensions
                 var xmlFile = $"api.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
-            });
 
-            return services;
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Name = JwtBearerDefaults.AuthenticationScheme,
+                    Type = SecuritySchemeType.OAuth2,
+                    Scheme = "oauth2",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Flows = new OpenApiOAuthFlows
+                    {
+                        Password = new OpenApiOAuthFlow
+                        {
+                            TokenUrl = new Uri($"{identityUri}/connect/token")
+                        },
+                    }
+                });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "oauth2"
+                            },
+                        },
+                        new List<string>()
+                    }
+                });
+            });
         }
     }
 }

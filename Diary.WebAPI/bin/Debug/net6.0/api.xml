@@ -4,24 +4,25 @@
         <name>Diary.WebAPI</name>
     </assembly>
     <members>
+        <member name="M:Diary.WebAPI.AppConfiguration.ApplicationExtensions.AppExtensions.UseAuthorizationConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use serilog configuration
+            </summary>
+            <param name="app"></param>
+        </member>
         <member name="M:Diary.WebAPI.AppConfiguration.ApplicationExtensions.SerilogConfiguratios.UseSerilogConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             Use serilog configuration
             </summary>
             <param name="app"></param>
         </member>
-        <member name="T:Diary.WebAPI.AppConfiguration.ApplicationExtensions.SwaggerConfiguration">
-            <summary>
-            Application builder extensions
-            </summary>
-        </member>
-        <member name="M:Diary.WebAPI.AppConfiguration.ApplicationExtensions.SwaggerConfiguration.UseSwaggerConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+        <member name="M:Diary.WebAPI.AppConfiguration.ApplicationExtensions.ApplicationExtensions.UseSwaggerConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             Use swagger configuration
             </summary>
             <param name="app"></param>
         </member>
-        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.DbContextConfiguration.AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.ServicesExtensions.AddAuthorizationConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Add serilog configuration
             </summary>
@@ -33,17 +34,23 @@
             </summary>
             <param name="builder"></param>
         </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add swagger settings
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.DbContextConfiguration.AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add serilog configuration
+            </summary>
+            <param name="builder"></param>
+        </member>
         <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.SerilogConfigurations.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
             <summary>
             Add serilog configuration
             </summary>
             <param name="app"></param>
-        </member>
-        <member name="M:Diary.WebAPI.AppConfiguration.ServicesExtensions.SwaggerConfiguration.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            Add swagger settings
-            </summary>
-            <param name="services"></param>
         </member>
         <member name="T:Diary.WebAPI.AppConfiguration.ServicesExtensions.VersioningConfigurations">
             <summary>
@@ -272,34 +279,35 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Diary.WebAPI.Controllers.StudentController">
+        <member name="T:Diary.WebAPI.Controllers.UsersController">
             <summary>
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.StudentController.#ctor(Diary.Services.Abstract.IStudentService,AutoMapper.IMapper)">
+        <member name="M:Diary.WebAPI.Controllers.UsersController.#ctor(Diary.Services.Abstract.IStudentService,AutoMapper.IMapper)">
             <summary>
-            student controller
+            Users controller
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.StudentController.GetStudents(System.Int32,System.Int32)">
+        <member name="M:Diary.WebAPI.Controllers.UsersController.GetUsers(System.Int32,System.Int32)">
             <summary>
-            Get student by pages
+            Get users by pages
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.StudentController.DeleteStudent(System.Guid)">
+        <member name="M:Diary.WebAPI.Controllers.UsersController.DeleteUser(System.Guid)">
             <summary>
-            Delete student
+            Delete users
+            </summary>
+            <param name="users"></param>
+        </member>
+        <member name="M:Diary.WebAPI.Controllers.UsersController.GetUser(System.Guid)">
+            <summary>
+            Get user
             </summary>
         </member>
-        <member name="M:Diary.WebAPI.Controllers.StudentController.GetStudent(System.Guid)">
+        <member name="M:Diary.WebAPI.Controllers.UsersController.UpdateUser(System.Guid,Diary.WebAPI.Models.UpdateStudentRequest)">
             <summary>
-            Get student
-            </summary>
-        </member>
-        <member name="M:Diary.WebAPI.Controllers.StudentController.UpdateStudent(System.Guid,Diary.WebAPI.Models.UpdateStudentRequest)">
-            <summary>
-            Update student
+            Update users
             </summary>
         </member>
         <member name="T:Diary.WebAPI.Controllers.SubjectController">

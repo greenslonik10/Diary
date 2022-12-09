@@ -8,12 +8,18 @@ public class ServicesProfile : Profile {
 
     public ServicesProfile () {
         #region Student
-        CreateMap<Student, StudentModel>().ReverseMap();
-        CreateMap<Student, StudentPreviewModel>()
+        CreateMap<Student, StudentModel>().ReverseMap()
             .ForMember(x => x.Login, y => y.MapFrom(u => u.Login))
             .ForMember(x => x.Name, y => y.MapFrom(u => u.Name))
             .ForMember(x => x.Surname, y => y.MapFrom(u => u.Surname))
-            .ForMember(x => x.Patronymic, y => y.MapFrom(u => u.Patronymic));
+            .ForMember(x => x.Patronymic, y => y.MapFrom(u => u.Patronymic))
+            .ForMember(x => x.Role, y => y.MapFrom(u => u.Role))
+            .ForMember(x => x.Id, y => y.MapFrom(u => u.Id))
+            .ForMember(x => x.CreationTime, y => y.MapFrom(u => u.CreationTime))
+            .ForMember(x => x.ModificationTime, y => y.MapFrom(u => u.ModificationTime));
+        CreateMap<Student, StudentPreviewModel>()
+            .ForMember(x => x.Login, y => y.MapFrom(u => u.Login))
+            .ForMember(x => x.Id, y => y.MapFrom(u => u.Id));
         #endregion
 
         #region Admin

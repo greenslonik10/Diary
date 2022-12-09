@@ -12,44 +12,44 @@ namespace Diary.WebAPI.Controllers
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    public class StudentController : ControllerBase
+    //[Authorize]
+    public class UsersController : ControllerBase
     {
-        private readonly IStudentService studentService;
+        private readonly IStudentService userServise;
         private readonly IMapper mapper;
 
         /// <summary>
-        /// student controller
+        /// Users controller
         /// </summary>
-        public StudentController(IStudentService  studentService, IMapper mapper)
+        public UsersController(IStudentService userService,IMapper mapper)
         {
-            this.studentService = studentService;
+            this.userServise=userService;
             this.mapper=mapper;
         }
 
         
         /// <summary>
-        /// Get student by pages
+        /// Get users by pages
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         
-        public IActionResult GetStudents([FromQuery] int limit = 20, [FromQuery] int offset = 0)
+        public IActionResult GetUsers([FromQuery] int limit = 20, [FromQuery] int offset = 0)
         {
-            var pageModel = studentService.GetStudents(limit,offset);
+            var pageModel =userServise.GetStudents(limit,offset);
 
             return Ok(mapper.Map<PageResponse<StudentResponse>>(pageModel));
         }
         /// <summary>
-        /// Delete student
+        /// Delete users
         /// </summary>
-    
+        /// <param name="users"></param>
         [HttpDelete]
-        [Route("{id}")]
-        public IActionResult DeleteStudent([FromRoute] Guid id)
+        public IActionResult DeleteUser([FromRoute] Guid id)
         {
             try
             {
-                studentService.DeleteStudent(id);
+                userServise.DeleteStudent(id);
                 return Ok();
             }
             catch(Exception ex)
@@ -58,16 +58,16 @@ namespace Diary.WebAPI.Controllers
             }
         }
         /// <summary>
-        /// Get student
+        /// Get user
         /// </summary>
         [HttpGet]
         [Route("{id}")]
-        public IActionResult GetStudent([FromRoute] Guid id)
+        public IActionResult GetUser([FromRoute] Guid id)
         {
             try
             {
-                var studentModel = studentService.GetStudent(id);
-                return Ok(mapper.Map<AdminResponse>(studentModel));
+                var userModel =userServise.GetStudent(id);
+                return Ok(mapper.Map<StudentResponse>(userModel));
             }
             catch (Exception ex)
             {
@@ -75,11 +75,11 @@ namespace Diary.WebAPI.Controllers
             }
         }
         /// <summary>
-        /// Update student
+        /// Update users
         /// </summary>
         [HttpPut]
         [Route("{id}")]
-        public IActionResult UpdateStudent([FromRoute] Guid id, [FromBody] UpdateStudentRequest model)
+        public IActionResult UpdateUser([FromRoute] Guid id, [FromBody] UpdateStudentRequest model)
         {
            var validationResult =model.Validate();
            if(!validationResult.IsValid)
@@ -88,7 +88,7 @@ namespace Diary.WebAPI.Controllers
            }
            try
            {
-            var resultModel = studentService.UpdateStudent(id,mapper.Map<UpdateStudentModel>(model));
+            var resultModel = userServise.UpdateStudent(id,mapper.Map<UpdateStudentModel>(model));
             return Ok(mapper.Map<StudentResponse>(resultModel));
            }
            catch(Exception ex)

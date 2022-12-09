@@ -1,8 +1,10 @@
-﻿namespace Diary.Entity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Diary.Entity.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-public class Context : DbContext
+namespace Diary.Entity;
+public class Context : IdentityDbContext<Student, UserRole, Guid>
 {
     public DbSet<Admin>? Admin { get; set; }
     public DbSet<Class>? Class { get; set; }
@@ -19,6 +21,7 @@ public class Context : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        base.OnModelCreating(builder);
         #region Admin
         builder.Entity<Admin>().ToTable("admin");
         builder.Entity<Admin>().HasKey(x => x.Id);

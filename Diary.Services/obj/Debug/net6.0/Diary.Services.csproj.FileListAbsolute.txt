@@ -15,3 +15,5 @@ D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.dll
 D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\refint\Diary.Services.dll
 D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\Diary.Services.pdb
 D:\Projects\Diary\Diary.Services\obj\Debug\net6.0\ref\Diary.Services.dll
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Shared.dll
+D:\Projects\Diary\Diary.Services\bin\Debug\net6.0\Diary.Shared.pdb

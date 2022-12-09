@@ -11,5 +11,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Diary.Entity\Diary.Entity.csproj" />
     <ProjectReference Include="..\Diary.Repository\Diary.Repository.csproj" />
+    <PackageReference Include="Duende.IdentityServer" Version="6.1.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Diary.Shared\Diary.Shared.csproj" />
   </ItemGroup>
 </Project>

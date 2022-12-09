@@ -12,3 +12,6 @@ D:\Projects\Diary\Diary.Entity\obj\Debug\net6.0\refint\Diary.Entity.dll
 D:\Projects\Diary\Diary.Entity\obj\Debug\net6.0\Diary.Entity.pdb
 D:\Projects\Diary\Diary.Entity\obj\Debug\net6.0\Diary.Entity.genruntimeconfig.cache
 D:\Projects\Diary\Diary.Entity\obj\Debug\net6.0\ref\Diary.Entity.dll
+D:\Projects\Diary\Diary.Entity\bin\Debug\net6.0\Diary.Shared.dll
+D:\Projects\Diary\Diary.Entity\bin\Debug\net6.0\Diary.Shared.pdb
+D:\Projects\Diary\Diary.Entity\obj\Debug\net6.0\Diary.Entity.csproj.CopyComplete

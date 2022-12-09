@@ -1,0 +1,12 @@
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\Diary.Shared.csproj.AssemblyReference.cache
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\Diary.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\Diary.Shared.AssemblyInfoInputs.cache
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\Diary.Shared.AssemblyInfo.cs
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\Diary.Shared.csproj.CoreCompileInputs.cache
+D:\Projects\Diary\Diary.Shared\bin\Debug\net6.0\Diary.Shared.deps.json
+D:\Projects\Diary\Diary.Shared\bin\Debug\net6.0\Diary.Shared.dll
+D:\Projects\Diary\Diary.Shared\bin\Debug\net6.0\Diary.Shared.pdb
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\Diary.Shared.dll
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\refint\Diary.Shared.dll
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\Diary.Shared.pdb
+D:\Projects\Diary\Diary.Shared\obj\Debug\net6.0\ref\Diary.Shared.dll

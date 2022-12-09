@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {}
+    "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {}
   },
   "projects": {
     "D:\\Projects\\Diary\\Diary.Entity\\Diary.Entity.csproj": {
@@ -33,7 +33,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj": {
+                "projectPath": "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -46,6 +50,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Duende.IdentityServer": {
+              "target": "Package",
+              "version": "[6.1.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
@@ -95,14 +107,14 @@
         }
       }
     },
-    "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {
+    "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
+        "projectUniqueName": "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
         "projectName": "Diary.Repository",
-        "projectPath": "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
+        "projectPath": "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
         "packagesPath": "C:\\Users\\zazul\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Diary\\Diary.Repository\\obj\\",
+        "outputPath": "d:\\Projects\\Diary\\Diary.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -127,6 +139,9 @@
             "projectReferences": {
               "D:\\Projects\\Diary\\Diary.Entity\\Diary.Entity.csproj": {
                 "projectPath": "D:\\Projects\\Diary\\Diary.Entity\\Diary.Entity.csproj"
+              },
+              "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj": {
+                "projectPath": "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj"
               }
             }
           }
@@ -141,6 +156,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
@@ -150,6 +169,67 @@
               "version": "[6.0.10, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj",
+        "projectName": "Diary.Shared",
+        "projectPath": "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj",
+        "packagesPath": "C:\\Users\\zazul\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Diary\\Diary.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\zazul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
