@@ -70,21 +70,8 @@ public class ScheduleService : IScheduleService
       {
         throw new Exception ("Attempt to create a non-unique object!");
       }
-      if(subjectRepository.GetAll(x=>x.Id==scheduleModel.SubjectID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
-        if(classRepository.GetAll(x=>x.Id==scheduleModel.ClassID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
-        if(teacherRepository.GetAll(x=>x.Id==scheduleModel.TeacherID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
         ScheduleModel createSchedule = new ScheduleModel();
         createSchedule.ClassID=scheduleModel.ClassID;
-        createSchedule.Id=scheduleModel.Id;
         createSchedule.SubjectID=scheduleModel.SubjectID;
         createSchedule.TeacherID=scheduleModel.TeacherID;
         createSchedule.DateTime=scheduleModel.DateTime;

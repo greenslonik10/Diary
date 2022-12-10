@@ -33,7 +33,8 @@ public class AuthService : IAuthService
     }
     public async Task<StudentModel> RegisterUser(RegisterStudentModel model)
     {
-        var existingUser = await userManager.FindByEmailAsync(model.Login);
+        //var existingUser = await userManager.FindByEmailAsync(model.Login);
+        var existingUser = usersRepository.GetAll(f => f.Login == model.Login).FirstOrDefault();
         if (existingUser != null)
         {
             throw new Exception("User already exists");
@@ -41,9 +42,12 @@ public class AuthService : IAuthService
 
         var user = new Student()
         {
-            Email = model.Login,
+            Login = model.Login,
             UserName = model.Login, // обязательно
             Name = model.Name ?? "",
+            PasswordHash = model.PasswordHash,
+            ClassID = model.ClassID,
+            SchoolID = model.SchoolID,
             EmailConfirmed = true //to make it easier
         };
 

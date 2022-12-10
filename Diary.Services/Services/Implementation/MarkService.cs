@@ -68,17 +68,8 @@ public class MarkService : IMarkService
       {
         throw new Exception ("Attempt to create a non-unique object!");
       }
-      if(studentRepository.GetAll(x=>x.Id==MarkModel.StudentID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
-        if(scheduleRepository.GetAll(x=>x.Id==MarkModel.ScheduleID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
         MarkModel createMark = new MarkModel();
         createMark.StudentID=MarkModel.StudentID;
-        createMark.Id=MarkModel.Id;
         createMark.Score=MarkModel.Score;
         createMark.ScheduleID=MarkModel.ScheduleID;
         markRepository.Save(mapper.Map<Mark>(createMark));

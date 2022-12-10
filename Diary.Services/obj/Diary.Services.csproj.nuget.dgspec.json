@@ -107,14 +107,14 @@
         }
       }
     },
-    "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {
+    "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
+        "projectUniqueName": "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
         "projectName": "Diary.Repository",
-        "projectPath": "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
+        "projectPath": "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
         "packagesPath": "C:\\Users\\zazul\\.nuget\\packages\\",
-        "outputPath": "d:\\Projects\\Diary\\Diary.Repository\\obj\\",
+        "outputPath": "D:\\Projects\\Diary\\Diary.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -222,8 +222,8 @@
               "D:\\Projects\\Diary\\Diary.Entity\\Diary.Entity.csproj": {
                 "projectPath": "D:\\Projects\\Diary\\Diary.Entity\\Diary.Entity.csproj"
               },
-              "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {
-                "projectPath": "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj"
+              "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj": {
+                "projectPath": "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj"
               },
               "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj": {
                 "projectPath": "D:\\Projects\\Diary\\Diary.Shared\\Diary.Shared.csproj"

@@ -6,16 +6,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace Diary.Entity;
 public class Context : IdentityDbContext<Student, UserRole, Guid>
 {
-    public DbSet<Admin>? Admin { get; set; }
-    public DbSet<Class>? Class { get; set; }
-    public DbSet<Mark>? Mark { get; set; }
-    public DbSet<Presence>? Presence { get; set; }
-    public DbSet<School>? School { get; set; }
-    public DbSet<Schedule>? Schedules { get; set; }
-    public DbSet<Student>? Student { get; set; }
-    public DbSet<Subject>? Subject { get; set; }
-    public DbSet<Teacher>? Teacher { get; set; }
-    public DbSet<TeacherInClass>? TeacherInClass { get; set; }
 
     public Context(DbContextOptions<Context> options) : base(options) { }
 

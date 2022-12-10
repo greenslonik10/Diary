@@ -9,5 +9,7 @@ public class RegisterStudentModel
     public string Name { get; set; }
     public string Surname { get; set; }
     public string Patronimyc { get; set; }
+    public Guid ClassID {get; set;}
+    public Guid SchoolID {get; set;}
     public Role Role { get; set; }
 }

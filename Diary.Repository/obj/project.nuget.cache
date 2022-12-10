@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q07lfAk9Oo4x2mi9d3PhwWiDeGo5cjXpNizcEAVy7PjwBHrxqbKh5M14WXeQMR2PQmQvGLT7hu8GyeAF28fG8w==",
+  "dgSpecHash": "oGdpfaI6C7HYiMu6Smn1H37kzX7uwOYsv5ikoOl3SzQFSfizoB4ILV/dXHdU2t5UdFs9NfowPDfOEK6jyLF0oQ==",
   "success": true,
-  "projectFilePath": "d:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
+  "projectFilePath": "D:\\Projects\\Diary\\Diary.Repository\\Diary.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zazul\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\zazul\\.nuget\\packages\\duende.identityserver\\6.1.7\\duende.identityserver.6.1.7.nupkg.sha512",

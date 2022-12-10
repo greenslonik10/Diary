@@ -69,13 +69,8 @@ public class TeacherService : ITeacherService
       {
         throw new Exception ("Attempt to create a non-unique object!");
       }
-      if(schoolRepository.GetAll(x=>x.Id==teacherModel.SchoolID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
         TeacherModel createTeacher = new TeacherModel();
         createTeacher.SchoolID=teacherModel.SchoolID;
-        createTeacher.Id=teacherModel.Id;
         createTeacher.Name=teacherModel.Name;
         createTeacher.Surname=teacherModel.Surname;
         createTeacher.Patronymic=teacherModel.Patronymic;

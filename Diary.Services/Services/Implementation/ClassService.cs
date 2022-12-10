@@ -67,13 +67,8 @@ ClassModel IClassService.CreateClass(Diary.Services.Models.ClassModel classModel
       {
         throw new Exception ("Attempt to create a non-unique object!");
       }
-      if(schoolRepository.GetAll(x=>x.Id==classModel.SchoolID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
         ClassModel createClass = new ClassModel();
         createClass.SchoolID=classModel.SchoolID;
-        createClass.Id=classModel.Id;
         createClass.Name=classModel.Name;
         classRepository.Save(mapper.Map<Class>(createClass));
         return createClass;

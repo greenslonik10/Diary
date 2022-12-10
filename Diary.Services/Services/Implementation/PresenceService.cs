@@ -68,17 +68,8 @@ public class PresenceService : IPresenceService
       {
         throw new Exception ("Attempt to create a non-unique object!");
       }
-      if(studentRepository.GetAll(x=>x.Id==presenceModel.StudentID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
-        if(scheduleRepository.GetAll(x=>x.Id==presenceModel.ScheduleID).FirstOrDefault() == null)
-        {
-            throw new Exception ("The object does not exist in the database!");
-        }
         PresenceModel createPresence = new PresenceModel();
         createPresence.StudentID=presenceModel.StudentID;
-        createPresence.Id=presenceModel.Id;
         createPresence.Value=presenceModel.Value;
         createPresence.ScheduleID=presenceModel.ScheduleID;
         presenceRepository.Save(mapper.Map<Presence>(createPresence));

@@ -11,7 +11,7 @@ public static partial class ServicesExtensions
     {
         services.AddAutoMapper(typeof(ServicesProfile));
         //services
-        services.AddScoped<IStudentService, StudentService>();
+        services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IAdminService, AdminService>();
         services.AddScoped<IStudentService, StudentService>();
         services.AddScoped<ISchoolService, SchoolService>();
