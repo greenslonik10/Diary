@@ -412,5 +412,15 @@
             Update teacher in class
             </summary>
         </member>
+        <member name="T:CityForum.WebApi.Controllers.AuthController">
+            <summary>
+            Auth endpoints
+            </summary>
+        </member>
+        <member name="M:CityForum.WebApi.Controllers.AuthController.#ctor(Diary.Services.Abstract.IAuthService,AutoMapper.IMapper)">
+            <summary>
+            Auth controller
+            </summary>
+        </member>
     </members>
 </doc>
