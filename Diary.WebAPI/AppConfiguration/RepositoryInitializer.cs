@@ -17,8 +17,9 @@ public static class RepositoryInitializer
         await authService.RegisterUser(new Services.Models.RegisterStudentModel()
         {
             Login = MASTER_ADMIN_EMAIL,
-            PasswordHash = MASTER_ADMIN_PASSWORD,
+            Password = MASTER_ADMIN_PASSWORD,
             Role = Entity.Models.Role.Admin
+
         });
     }
 
